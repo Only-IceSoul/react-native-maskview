@@ -14,11 +14,11 @@ import com.facebook.react.uimanager.ViewManager;
 public class ReactNativeMaskviewPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Arrays.<NativeModule>asList(new ReactNativeMaskviewModule(reactContext));
+        return Collections.emptyList();
     }
 
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-        return Collections.emptyList();
+        return Arrays.<ViewManager>asList(new MaskViewManager());
     }
 }

@@ -1,7 +1,12 @@
 // main index.js
 
-import { NativeModules } from 'react-native';
+import { Platform } from "react-native";
+import MaskViewMobile from "./src/MaskView";
+import MaskViewWeb from "./src/MaskViewWeb";
 
-const { ReactNativeMaskview } = NativeModules;
+const MaskView = Platform.OS === "ios"
+  || Platform.OS === "android"
+  ? MaskViewMobile : MaskViewWeb;
 
-export default ReactNativeMaskview;
+export default MaskView;
+
