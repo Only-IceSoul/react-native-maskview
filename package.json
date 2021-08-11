@@ -1,8 +1,8 @@
 {
   "name": "react-native-maskview",
   "title": "React Native Maskview",
-  "version": "0.0.4",
-  "description": "TODO TODO TODO",
+  "version": "1.0.0",
+  "description": "Mask Android IOS",
   "main": "index.js",
   "files": [
     "README.md",
@@ -18,15 +18,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-maskview.git",
-    "baseUrl": "https://github.com/github_account/react-native-maskview"
+    "url": "git+https://github.com/Only-IceSoul/react-native-maskview.git",
+    "baseUrl": "https://github.com/Only-IceSoul/react-native-maskview"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "android",
+    "ios",
+    "mask",
+    "composite",
+    "maskedview",
+    "masked",
+    "blend"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "yourname@email.com"
+    "name": "Juan",
+    "email": "justin_lf@msn.com"
   },
   "license": "MIT",
   "licenseFilename": "LICENSE",
