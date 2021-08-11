@@ -7,12 +7,12 @@ const NativeMaskView = requireNativeComponent ? requireNativeComponent('MaskView
 
   
 const MaskView = NativeMaskView ? (props) =>{
-    const { element, children, ...otherViewProps } = props;
+    const { mask, children, ...otherViewProps } = props;
 
     return (
       <NativeMaskView {...otherViewProps}>
         <View pointerEvents="none" style={StyleSheet.absoluteFill}>
-          {element}
+          {mask}
         </View>
         {children}
       </NativeMaskView>
