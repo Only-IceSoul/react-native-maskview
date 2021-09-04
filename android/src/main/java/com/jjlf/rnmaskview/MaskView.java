@@ -25,23 +25,16 @@ public class MaskView extends ViewGroup {
 
     }
 
-    private Bitmap mBitmap;
-    private final Canvas mCanvas = new Canvas();
     private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private final PorterDuffXfermode mPorterDuffXferMode = new PorterDuffXfermode(PorterDuff.Mode.DST_IN);
+    private final PorterDuffXfermode mPorterDuffXferMode = new PorterDuffXfermode(PorterDuff.Mode.SRC_IN);
     @Override
     protected void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if(mBitmap != null){
-//            mCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
-            mBitmap.eraseColor(Color.TRANSPARENT);
             View child = getChildAt(0);
-            child.draw(mCanvas);
+            child.draw(canvas);
             mPaint.setXfermode(mPorterDuffXferMode);
-            canvas.drawBitmap(mBitmap,0f,0f,mPaint);
-            mPaint.setXfermode(null);
-
-        }
+            canvas.saveLayer(0f,0f,getWidth(),getHeight(),mPaint);
+            super.dispatchDraw(canvas);
+            canvas.restore();
     }
 
 
@@ -53,22 +46,7 @@ public class MaskView extends ViewGroup {
         invalidate();
     }
 
-    @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w, h, oldw, oldh);
 
-        if(mBitmap == null){
-            mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
-            mCanvas.setBitmap(mBitmap);
-
-        }else{
-            if(mBitmap.getWidth() != w || mBitmap.getHeight() != h){
-                mBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
-                mCanvas.setBitmap(mBitmap);
-
-            }
-        }
-    }
 
     @Override
     public void addView(View child, int index, LayoutParams params) {
