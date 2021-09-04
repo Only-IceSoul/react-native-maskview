@@ -3,7 +3,7 @@ import { View, StyleSheet, requireNativeComponent } from 'react-native';
 
 
 
-const NativeMaskView = requireNativeComponent ? requireNativeComponent('MaskView',null) : null
+const NativeMaskView = requireNativeComponent ? requireNativeComponent('JJSMaskView',null) : null
 
   
 const MaskView = NativeMaskView ? (props) =>{

@@ -10,7 +10,7 @@ public class MaskViewManager  extends ViewGroupManager<MaskView> {
 
     @Override
     public String getName() {
-        return "MaskView";
+        return "JJSMaskView";
     }
 
     @Override
