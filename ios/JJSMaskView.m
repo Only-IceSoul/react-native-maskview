@@ -14,6 +14,6 @@
 
 
 @interface
-RCT_EXTERN_MODULE(MaskView,RCTViewManager)
+RCT_EXTERN_MODULE(JJSMaskView,RCTViewManager)
 
 @end

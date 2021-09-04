@@ -10,8 +10,8 @@
 import Foundation
 import UIKit
 
-@objc(MaskView)
-class MaskView: RCTViewManager {
+@objc(JJSMaskView)
+class JJSMaskView: RCTViewManager {
 
     override func view() -> UIView! {
        return MaskedView()

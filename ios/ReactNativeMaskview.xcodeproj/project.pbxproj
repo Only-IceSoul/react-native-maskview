@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D00B944326C342EF005F2E2F /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B944226C342EF005F2E2F /* MaskView.swift */; };
+		D00B944326C342EF005F2E2F /* JJSMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B944226C342EF005F2E2F /* JJSMaskView.swift */; };
 		D00B944626C3434E005F2E2F /* MaskedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B944526C3434E005F2E2F /* MaskedView.swift */; };
-		D00B944926C34378005F2E2F /* MaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = D00B944826C34378005F2E2F /* MaskView.m */; };
+		D00B944926C34378005F2E2F /* JJSMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = D00B944826C34378005F2E2F /* JJSMaskView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,9 +27,9 @@
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libReactNativeMaskview.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeMaskview.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00B944126C342EF005F2E2F /* ReactNativeMaskview-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactNativeMaskview-Bridging-Header.h"; sourceTree = "<group>"; };
-		D00B944226C342EF005F2E2F /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
+		D00B944226C342EF005F2E2F /* JJSMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJSMaskView.swift; sourceTree = "<group>"; };
 		D00B944526C3434E005F2E2F /* MaskedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskedView.swift; sourceTree = "<group>"; };
-		D00B944826C34378005F2E2F /* MaskView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskView.m; sourceTree = "<group>"; };
+		D00B944826C34378005F2E2F /* JJSMaskView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJSMaskView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				D00B944526C3434E005F2E2F /* MaskedView.swift */,
-				D00B944226C342EF005F2E2F /* MaskView.swift */,
-				D00B944826C34378005F2E2F /* MaskView.m */,
+				D00B944226C342EF005F2E2F /* JJSMaskView.swift */,
+				D00B944826C34378005F2E2F /* JJSMaskView.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				D00B944126C342EF005F2E2F /* ReactNativeMaskview-Bridging-Header.h */,
 			);
@@ -120,8 +120,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D00B944326C342EF005F2E2F /* MaskView.swift in Sources */,
-				D00B944926C34378005F2E2F /* MaskView.m in Sources */,
+				D00B944326C342EF005F2E2F /* JJSMaskView.swift in Sources */,
+				D00B944926C34378005F2E2F /* JJSMaskView.m in Sources */,
 				D00B944626C3434E005F2E2F /* MaskedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
