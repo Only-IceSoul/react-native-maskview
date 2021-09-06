@@ -2,6 +2,8 @@
 
 Mask
 
+Hardware Accelerated 
+
 [x] android: api 21+   
 [x] ios : 10.0+   
 [ ] web:   

@@ -26,15 +26,18 @@ public class MaskView extends ViewGroup {
     }
 
     private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private final PorterDuffXfermode mPorterDuffXferMode = new PorterDuffXfermode(PorterDuff.Mode.SRC_IN);
+    private final PorterDuffXfermode mPorterDuffXferMode = new PorterDuffXfermode(PorterDuff.Mode.DST_IN);
     @Override
     protected void dispatchDraw(Canvas canvas) {
-            View child = getChildAt(0);
-            child.draw(canvas);
+        View child = getChildAt(0);
+        super.dispatchDraw(canvas);
+        if(child != null){
             mPaint.setXfermode(mPorterDuffXferMode);
             canvas.saveLayer(0f,0f,getWidth(),getHeight(),mPaint);
-            super.dispatchDraw(canvas);
+            child.draw(canvas);
             canvas.restore();
+        }
+
     }
 
 
