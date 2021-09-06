@@ -17,29 +17,22 @@ import androidx.annotation.NonNull;
 
 public class MaskView extends ViewGroup {
 
+    private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     MaskView(Context context){
         super(context);
-        setClipChildren(false);
         setLayerType(LAYER_TYPE_HARDWARE,null);
-
+        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
     }
 
-    private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private final PorterDuffXfermode mPorterDuffXferMode = new PorterDuffXfermode(PorterDuff.Mode.DST_IN);
     @Override
     protected void dispatchDraw(Canvas canvas) {
         View child = getChildAt(0);
+        child.draw(canvas);
+        canvas.saveLayer(0f,0f,getWidth(),getHeight(),mPaint);
         super.dispatchDraw(canvas);
-        if(child != null){
-            mPaint.setXfermode(mPorterDuffXferMode);
-            canvas.saveLayer(0f,0f,getWidth(),getHeight(),mPaint);
-            child.draw(canvas);
-            canvas.restore();
-        }
-
+        canvas.restore();
     }
-
 
 
     @SuppressLint("MissingSuperCall")
