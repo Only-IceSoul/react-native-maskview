@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 
+import java.lang.ref.WeakReference;
+
 public class MaskView extends ViewGroup {
 
     private final Paint mPaintMask = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -29,23 +31,24 @@ public class MaskView extends ViewGroup {
 
     @Override
     protected void dispatchDraw(Canvas canvas) {
+
         View child = getChildAt(0);
         super.dispatchDraw(canvas);
-        mPaintMask.setXfermode(dstIn);
-        canvas.saveLayer(0f,0f,getWidth(),getHeight(),mPaintMask);
-        child.draw(canvas);
-        canvas.restore();
-
         if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.M && canvas.isHardwareAccelerated()){
             mPaintMask.setXfermode(dstOut);
-            int main = canvas.saveLayer(0f,0f,getWidth(),getHeight(),mPaintMask);
+            canvas.saveLayer(0f,0f,getWidth(),getHeight(),mPaintMask);
             canvas.drawColor(Color.BLACK);
             mPaintMask.setXfermode(dstOut);
             int clip = canvas.saveLayer(0f,0f,getWidth(),getHeight(),mPaintMask);
             child.draw(canvas);
             canvas.restoreToCount(clip);
-            canvas.restoreToCount(main);
+        }else{
+            mPaintMask.setXfermode(dstIn);
+            canvas.saveLayer(0f,0f,getWidth(),getHeight(),mPaintMask);
+            child.draw(canvas);
         }
+        canvas.restore();
+
     }
 
 

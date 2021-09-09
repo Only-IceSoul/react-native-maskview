@@ -8,6 +8,8 @@ Hardware Accelerated
 [x] ios : 10.0+   
 [ ] web:   
 
+<img src="./src/img/preview.jpg" width="200">
+
 
 ## Getting started
 
@@ -21,9 +23,10 @@ or
 
 ## IOS
 
-**Add Swift**
+cd ios   
+pod install
 
-(If you are using expo sdk >=42 you don't need to do this)
+**Add Swift**
 
 /ios/name_project
 
@@ -32,19 +35,21 @@ add a .swift file
 
 # Usage
 ```javascript
-import MaskView from 'react-native-drawableview';
+import MaskView from 'react-native-maskview';
 
 // TODO: What to do with the module?
 
-   <MaskView 
+   <MaskView  style={{width:300,height:300,backgroundColor:'purple',justifyContent:'center',alignItems:'center'}}
    mask={
-       <View>
-            <Text>Hello World</Text>
-       </View>
+       <View style={{flex:1,display:'flex',justifyContent:'center',alignItems:'center'}}>
+                 <TextReact > MASK TEXT </TextReact>
+             </View>
    } >
 
 
-        <View  style={{backgroundColor:'red'}}/>
+         <Painter style={{width:250,height:250,backgroundColor:'green'}}>
+              <Rect  x={0} y={0}  w={150} h={170} fill={colorOrange} shadowOpacity={1} shadowOffset={{x:10,y:10}}/>
+       </Painter>
    </MaskView>
 
 ```
