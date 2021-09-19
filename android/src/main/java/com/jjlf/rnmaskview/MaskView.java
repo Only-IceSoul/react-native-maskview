@@ -34,7 +34,7 @@ public class MaskView extends ViewGroup {
 
         View child = getChildAt(0);
         super.dispatchDraw(canvas);
-        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.M && canvas.isHardwareAccelerated()){
+        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.O_MR1 && canvas.isHardwareAccelerated()){
             mPaintMask.setXfermode(dstOut);
             canvas.saveLayer(0f,0f,getWidth(),getHeight(),mPaintMask);
             canvas.drawColor(Color.BLACK);

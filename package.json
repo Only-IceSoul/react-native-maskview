@@ -1,7 +1,7 @@
 {
   "name": "react-native-maskview",
   "title": "React Native Maskview",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Mask Hardware Accelerated Android IOS",
   "main": "index.js",
   "files": [
