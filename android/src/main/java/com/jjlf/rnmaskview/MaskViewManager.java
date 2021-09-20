@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 
-public class MaskViewManager  extends ViewGroupManager<MaskView> {
+public class MaskViewManager extends ViewGroupManager<MaskView> {
 
     @Override
     public String getName() {

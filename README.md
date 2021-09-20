@@ -2,11 +2,8 @@
 
 Mask
 
-Hardware Accelerated 
-
 [x] android: api 21+   
 [x] ios : 10.0+   
-[ ] web:   
 
 <img src="./src/img/preview.jpg" width="200">
 
@@ -35,8 +32,10 @@ add a .swift file
 
 # Usage
 ```javascript
-import MaskView from 'react-native-maskview';
+import {MaskView , MaskViewN} from 'react-native-maskview';
 
+// (Android)MaskViewN Without any kind of layer
+// MaskView Layer type Hardware
 // TODO: What to do with the module?
 
    <MaskView  style={{width:300,height:300,backgroundColor:'purple',justifyContent:'center',alignItems:'center'}}

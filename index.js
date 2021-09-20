@@ -2,11 +2,18 @@
 
 import { Platform } from "react-native";
 import MaskViewMobile from "./src/MaskView";
+import MaskViewNMobile from "./src/MaskViewN";
 import MaskViewWeb from "./src/MaskViewWeb";
 
-const MaskView = Platform.OS === "ios"
+export const MaskView = Platform.OS === "ios"
   || Platform.OS === "android"
   ? MaskViewMobile : MaskViewWeb;
 
-export default MaskView;
+  export const MaskViewN = Platform.OS === "ios"
+  ? MaskViewMobile : ( Platform.OS === "android"
+  ? MaskViewNMobile : MaskViewWeb)
+
+
+
+
 

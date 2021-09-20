@@ -19,6 +19,8 @@ public class ReactNativeMaskviewPackage implements ReactPackage {
 
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-        return Arrays.<ViewManager>asList(new MaskViewManager());
+        return Arrays.<ViewManager>asList(
+                new MaskViewNoneManager(),
+                new MaskViewManager());
     }
 }

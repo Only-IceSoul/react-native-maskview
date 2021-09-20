@@ -1,40 +1,41 @@
 package com.jjlf.rnmaskview;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import android.graphics.drawable.NinePatchDrawable;
 import android.os.Build;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
 
-import java.lang.ref.WeakReference;
 
-public class MaskView extends ViewGroup {
+public class MaskViewNone extends ViewGroup {
 
     private final Paint mPaintMask = new Paint(Paint.ANTI_ALIAS_FLAG);
     public static final PorterDuffXfermode dstIn = new PorterDuffXfermode(PorterDuff.Mode.DST_IN);
     public static final PorterDuffXfermode dstOut = new PorterDuffXfermode(PorterDuff.Mode.DST_OUT);
 
-    MaskView(Context context){
+    private int mBgColor  =  Color.TRANSPARENT;
+    MaskViewNone(Context context){
         super(context);
-        setLayerType(LAYER_TYPE_HARDWARE,null);
-    }
 
+    }
+    public void setBgColor(int c){
+        if(mBgColor != c){
+            mBgColor = c;
+            invalidate();
+        }
+    }
     @Override
     protected void dispatchDraw(Canvas canvas) {
-
         View child = getChildAt(0);
+        canvas.drawColor(mBgColor);
+        canvas.saveLayer(0f,0f,getWidth(),getHeight(),null);
         super.dispatchDraw(canvas);
-        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.O_MR1){
+        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.O_MR1 ){
             mPaintMask.setXfermode(dstOut);
             canvas.saveLayer(0f,0f,getWidth(),getHeight(),mPaintMask);
             canvas.drawColor(Color.BLACK);
@@ -52,17 +53,9 @@ public class MaskView extends ViewGroup {
             child.setVisibility(View.INVISIBLE);
         }
         canvas.restore();
+        canvas.restore();
 
     }
-
-
-    @SuppressLint("MissingSuperCall")
-    @Override
-    public void onDescendantInvalidated(@NonNull View child, @NonNull View target) {
-//        super.onDescendantInvalidated(child, target);
-        invalidate();
-    }
-
 
 
     @Override

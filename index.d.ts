@@ -12,4 +12,5 @@ interface MaskViewProps extends ViewProps {
 declare class MaskComponent extends React.Component<MaskViewProps> {}
 declare const MaskViewBase: Constructor<NativeMethods> & typeof MaskComponent;
 
-export default class MaskView extends MaskViewBase {}
+export  class MaskViewN extends MaskViewBase {}
+export  class MaskView extends MaskViewBase {}
