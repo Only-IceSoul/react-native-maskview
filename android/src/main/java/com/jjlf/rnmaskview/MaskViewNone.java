@@ -32,8 +32,9 @@ public class MaskViewNone extends ViewGroup {
     @Override
     protected void dispatchDraw(Canvas canvas) {
         View child = getChildAt(0);
-        canvas.drawColor(mBgColor);
+        canvas.drawColor(Color.TRANSPARENT);
         canvas.saveLayer(0f,0f,getWidth(),getHeight(),null);
+        canvas.drawColor(mBgColor);
         super.dispatchDraw(canvas);
         if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.O_MR1 ){
             mPaintMask.setXfermode(dstOut);
