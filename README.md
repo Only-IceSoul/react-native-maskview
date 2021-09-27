@@ -32,10 +32,9 @@ add a .swift file
 
 # Usage
 ```javascript
-import {MaskView , MaskViewN} from 'react-native-maskview';
+import {MaskView , MaskViewH} from 'react-native-maskview';
 
-// (Android)MaskViewN Without any kind of layer
-// MaskView Layer type Hardware
+// (Android) MaskViewH Layer type Hardware
 // TODO: What to do with the module?
 
    <MaskView  style={{width:300,height:300,backgroundColor:'purple',justifyContent:'center',alignItems:'center'}}
